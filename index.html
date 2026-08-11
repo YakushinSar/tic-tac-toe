@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Крестики-нолики</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Крестики-нолики</h1>
+    <p class="status" id="status">Ход: <strong>X</strong></p>
+
+    <div class="board" id="board" role="grid" aria-label="Игровое поле 3 на 3">
+      <button class="cell" data-index="0" aria-label="Клетка 1"></button>
+      <button class="cell" data-index="1" aria-label="Клетка 2"></button>
+      <button class="cell" data-index="2" aria-label="Клетка 3"></button>
+      <button class="cell" data-index="3" aria-label="Клетка 4"></button>
+      <button class="cell" data-index="4" aria-label="Клетка 5"></button>
+      <button class="cell" data-index="5" aria-label="Клетка 6"></button>
+      <button class="cell" data-index="6" aria-label="Клетка 7"></button>
+      <button class="cell" data-index="7" aria-label="Клетка 8"></button>
+      <button class="cell" data-index="8" aria-label="Клетка 9"></button>
+    </div>
+
+    <button class="reset" id="reset">Новая игра</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(145deg, #1e3a5f, #0f172a);
+  color: #f8fafc;
+}
+
+.game {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.status {
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.status strong {
+  color: #38bdf8;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+  margin: 0 auto 1.5rem;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 12px;
+  background: #1e293b;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.cell:hover:not(:disabled) {
+  background: #334155;
+}
+
+.cell:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.x {
+  color: #38bdf8;
+}
+
+.cell.o {
+  color: #f472b6;
+}
+
+.cell.win {
+  background: #065f46;
+}
+
+.reset {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.reset:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 360px) {
+  .board {
+    grid-template-columns: repeat(3, 88px);
+    grid-template-rows: repeat(3, 88px);
+  }
+
+  .cell {
+    width: 88px;
+    height: 88px;
+    font-size: 2rem;
+  }
+}
