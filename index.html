@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Крестики-нолики</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Крестики-нолики с ИИ</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="game">
+  <div class="container">
     <h1>Крестики-нолики</h1>
-    <p class="status" id="status">Ход: <strong>X</strong></p>
 
-    <div class="board" id="board" role="grid" aria-label="Игровое поле 3 на 3">
-      <button class="cell" data-index="0" aria-label="Клетка 1"></button>
-      <button class="cell" data-index="1" aria-label="Клетка 2"></button>
-      <button class="cell" data-index="2" aria-label="Клетка 3"></button>
-      <button class="cell" data-index="3" aria-label="Клетка 4"></button>
-      <button class="cell" data-index="4" aria-label="Клетка 5"></button>
-      <button class="cell" data-index="5" aria-label="Клетка 6"></button>
-      <button class="cell" data-index="6" aria-label="Клетка 7"></button>
-      <button class="cell" data-index="7" aria-label="Клетка 8"></button>
-      <button class="cell" data-index="8" aria-label="Клетка 9"></button>
+    <div class="controls">
+      <label for="difficulty">Уровень ИИ:</label>
+      <select id="difficulty">
+        <option value="easy">🧠 Лёгкий</option>
+        <option value="hard" selected>🤖 Сложный</option>
+      </select>
+      <button class="reset-game" id="resetGame">🔄 Новая игра</button>
     </div>
 
-    <button class="reset" id="reset">Новая игра</button>
-  </main>
+    <div class="scoreboard">
+      <div class="score x-score"><span class="symbol">X</span> <span id="xWins">0</span></div>
+      <div class="score draws"><span>🤝</span> <span id="draws">0</span></div>
+      <div class="score o-score"><span class="symbol">O</span> <span id="oWins">0</span></div>
+    </div>
 
+    <p class="status" id="status">Ход: <strong>X</strong></p>
+
+    <div class="board" id="board"></div>
+
+    <button class="reset-score" id="resetScore">🗑️ Сбросить счёт</button>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
